@@ -1,6 +1,8 @@
 # spree_gdpr
 This extension is designed for use with Spree 3.4 >
 
+```rails g spree_gdpr:install```
+
 ## Design Goals
 
 ### Frontend (Customer Facing)
@@ -13,4 +15,4 @@ This extension is designed for use with Spree 3.4 >
 1. Allow admins to ...
 
 ### Background Jobs
-1. Schedule a daily job that checks for changes to marketing consents, 
+1. Schedule a daily job that checks for changes to marketing consents,
