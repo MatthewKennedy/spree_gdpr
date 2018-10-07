@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  spree:
+    gdpr_settings: GDPR Settings
+    user_consent_check_list: GDPR Consent List
+    allows_user_preference_cookies: Allows preference cookies
+    allows_marketing_cookies: Allows marketing cookies
+    allows_analytics_cookies: Allows analytics cookies
+    accepts_marketing_emails: Accept marketing emails
+    accepts_news_updates_emails: Accept news emails
+    accepts_store_terms_and_conditions: Accepts terms & conditions
+    allow_cookies_store_your_preferences: Allow cookies that store your personal preferences such as prefered currency & language
+    allow_cookies_that_track_what_pages_you_visit: Allow cookies that that what pages you visit.
+    allow_cookies_that_track_promo_performance: Allow cookies that track promotional performance

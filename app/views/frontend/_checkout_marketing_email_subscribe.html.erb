@@ -1,0 +1,5 @@
+<span data-hook="save_user_address" class='save-user-address-wrapper'>
+  &nbsp; &nbsp;
+  <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
+  <%= label_tag :save_user_address, Spree.t(:accept_marketing) %>
+</span>
