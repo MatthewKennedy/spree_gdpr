@@ -9,10 +9,9 @@ This extension is designed for use with Spree 3.4 >
 1. Allow customers to manage their privacy and marketing consent via the customer accounts page
 1. Allow customers to consent to marketing emails at checkout
 1. Allow customers to subscribe to emails directly via a form.
-1. Give customers the option to consent to cookie usage for marketing
+1. Give customers the option to consent to cookie usage for marketing on popup
 
 ### Backend (Admin)
-1. Allow admins to ...
+1. Allow admins to view customer consent values in users.
 
-### Background Jobs
-1. Schedule a daily job that checks for changes to marketing consents,
+
