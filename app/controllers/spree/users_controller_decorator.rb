@@ -3,7 +3,10 @@ module Spree
     def update_gdpr
       @user ||= spree_current_user
       if @user.update_attributes(user_gdpr_params)
-        redirect_to spree.account_url, notice: Spree.t(:account_gdpr_updated)
+        respond_to do |format|
+          format.html { redirect_to spree.account_url, notice: Spree.t(:account_gdpr_updated) }
+          format.js
+         end
       else
         render :edit
       end

@@ -1,6 +1,6 @@
 <h3>My Privacy Settings</h3>
 <div data-hook="account_summary" class="account-summary well">
-  <%= form_for @user, url: update_gdpr_path, method: :put do |f| %>
+  <%= form_for @user, url: update_gdpr_path, method: :put, remote: true do |f| %>
     <h4>Email Settings</h4>
     <ul class="list-unstyled">
       <li>
