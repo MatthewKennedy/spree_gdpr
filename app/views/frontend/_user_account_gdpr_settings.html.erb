@@ -1,30 +1,31 @@
 <h3>My Privacy Settings</h3>
 <div data-hook="account_summary" class="account-summary well">
-
-  <h4>Email Settings</h4>
-  <ul class="list-unstyled">
-    <li>
-      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-      <%= label_tag :save_user_address, Spree.t(:accepts_marketing_emails) %>
-    </li>
-  </ul>
-  <br>
+  <%= form_for @user, url: update_gdpr_path, method: :put, remote: true do |f| %>
+    <h4>Email Settings</h4>
+    <ul class="list-unstyled">
+      <li>
+        <%= f.check_box :accepts_marketing_emails %>
+        <%= f.label :accepts_marketing_emails, Spree.t(:accepts_marketing_emails) %>
+      </li>
+    </ul>
+    <br>
     <h4>Cookie Settings</h4>
-  <ul class="list-unstyled">
-    <li>
-      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-      <%= label_tag :save_user_address, Spree.t(:allow_cookies_store_your_preferences) %>
-    </li>
-    <li>
-      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-      <%= label_tag :save_user_address, Spree.t(:allow_cookies_that_track_what_pages_you_visit) %>
-    </li>
-    <li>
-      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-      <%= label_tag :save_user_address, Spree.t(:allow_cookies_that_track_promo_performance) %>
-    </li>
-      <span class="small">**<a>Click here to learn more about cookies and how we use them.</a></span>
-  </ul>
-<br>
-  <button name="button" type="submit" class="btn btn-primary btn-success" data-disable-with="Saving..."><span class="icon icon-refresh"></span> Update</button>
+    <ul class="list-unstyled">
+      <li>
+        <%= f.check_box :allows_user_preference_cookies %>
+        <%= f.label :allows_user_preference_cookies, Spree.t(:allow_cookies_store_your_preferences) %>
+      </li>
+      <li>
+        <%= f.check_box :allows_analytics_cookies %>
+        <%= f.label :allows_analytics_cookies, Spree.t(:allow_cookies_that_track_what_pages_you_visit) %>
+      </li>
+      <li>
+        <%= f.check_box :allows_marketing_cookies %>
+        <%= f.label :allows_marketing_cookies, Spree.t(:allow_cookies_that_track_promo_performance) %>
+      </li>
+        <span class="small">**<a>Click here to learn more about cookies and how we use them.</a></span>
+    </ul>
+    <br>
+    <button name="button" type="submit" class="btn btn-primary btn-success" data-disable-with="Saving..."><span class="icon icon-refresh"></span> Update</button>
+  <% end %>
 </div>
