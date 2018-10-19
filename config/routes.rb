@@ -1,3 +1,3 @@
 Spree::Core::Engine.add_routes do
-  # Add your extension routes here
+  put "/update_gdpr", controller: "users", action: "update_gdpr", as: :update_gdpr
 end

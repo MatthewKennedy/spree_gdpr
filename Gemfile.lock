@@ -167,6 +167,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.2.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -280,6 +281,9 @@ GEM
     premailer-rails (1.10.2)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.3)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
@@ -433,6 +437,7 @@ DEPENDENCIES
   ffaker
   mysql2
   pg (~> 0.18)
+  pry
   rails-controller-testing
   rspec-rails
   rubocop

@@ -33,6 +33,8 @@ RSpec.configure do |config|
   # Infer an example group's spec type from the file location.
   config.infer_spec_type_from_file_location!
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   # == URL Helpers
   #
   # Allows access to Spree's routes in specs:
