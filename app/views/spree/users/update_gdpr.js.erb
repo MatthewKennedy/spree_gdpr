@@ -1,4 +1,27 @@
-// ToDo Add logic for each preference
+
+<% if try_spree_current_user.accepts_marketing_emails %>
+      analytics.identify( {
+          email: "<%= @user.email %>",
+          },
+          { integrations: {
+// ToDo Replace "MailChimp" with <%= segment_email_destination %> string can be set in Spree admin
+            "MailChimp": {
+              "subscriptionStatus": "subscribed"
+            }
+          }
+      });
+<% else %>
+      analytics.identify( {
+          email: "<%= @user.email %>",
+          },
+          { integrations: {
+// ToDo Replace "MailChimp" with <%= segment_email_destination %> string can be set in Spree admin
+            "MailChimp": {
+              "subscriptionStatus": "unsubscribed"
+            }
+          }
+      });
+<% end %>
 
 <% if try_spree_current_user.allows_user_preference_cookies %>
     console.log("user allows cookies")
