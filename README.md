@@ -1,5 +1,5 @@
 # spree_gdpr
-This extension is designed for use with Spree 3.5 and grater.
+This extension is designed for use with Spree version 3.5 or higher.
 spree_gdpr extends the spree_analytics_tracker extention by adding email subscription support via Segment.com, allowing (track.identify) functionality while remaining GDPR compliant.
 
 Using the spree_gdpr extention you can plug-in services like:
