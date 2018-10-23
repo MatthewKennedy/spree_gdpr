@@ -1,7 +1,7 @@
 <span data-hook="accepts_marketing_emails" class='save-user-address-wrapper'>
   &nbsp; &nbsp;
 
- <%# ToDo Add a working checkbox to checkout/address form that updates dadabase accepts_marketing_emails on submission of the address form button. %>
+ <%# ToDo Add a working checkbox to checkout/address form that updates database => accepts_marketing_emails on submission of the address form button. %>
   <%= feilds_for @user, url: update_gdpr_path, method: :put, remote: true do |f| %>
     <%= f.check_box :accepts_marketing_emails %>
     <%= f.label :accepts_marketing_emails, Spree.t(:accepts_marketing_emails) %>
