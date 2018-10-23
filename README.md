@@ -1,18 +1,10 @@
 # spree_gdpr
-This extension is designed for use with Spree 3.5 > extending the Spree Analytics Trackers Segment.com functionality allowing (track.identify) functionality while remaining GDPR compliant.
+This extension is designed for use with Spree 3.5 and grater.
+spree_gdpr extends the spree_analytics_tracker extention by adding email subscription support via Segment.com, allowing (track.identify) functionality while remaining GDPR compliant.
 
-Via Segment.com you can plug-in also a lot of additional vendors and services like:
-* Mixpanel
-* Kissmetrics
-* Google Analytics
-* Facebook Pixels
-* Google Ads re-marketing & conversion tracking
-* Bing Ads UET & conversion tracking
+Using the spree_gdpr extention you can plug-in services like:
 * Saasquatch affiliate marketing
-* Intercom live chat
-* MailChimp Marketing emails
-* HotJar heat maps
-* [and hundreds others](https://segment.com/catalog#integrations/all)
+* MailChimp email marketing subsriptions
 
 ## Installation
 
@@ -39,12 +31,10 @@ Via Segment.com you can plug-in also a lot of additional vendors and services li
 If your server was running, restart it so that it can find the assets properly.
 
 ## Design Goals
+Better support Segment.com customer marketing email subscription and affiliate tracking services.
 
 ### Frontend (Customer Facing)
 1. Allow customers to manage their privacy and marketing consent via the customer accounts page
 1. Allow customers to consent to marketing emails at checkout
 1. Allow customers to subscribe to emails directly via a form.
 1. Give customers the option to consent to cookie usage for marketing on popup
-
-### Backend (Admin)
-1. Allow admins to view customer consent values in users.
