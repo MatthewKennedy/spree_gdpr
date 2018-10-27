@@ -1,0 +1,25 @@
+<% if spree_current_user %>
+  <script>
+    if (typeof analytics !== 'undefined') {
+          analytics.identify({
+            email: '<%= spree_current_user.email %>',
+            <% if spree_current_user.order_count > 0 %>
+              firstName: '<%= spree_current_user.bill_address.first_name %>',
+              lastName: '<%= spree_current_user.bill_address.last_name %>',
+              phone: '<%= spree_current_user.bill_address.phone %>',
+            <% end %>
+          },
+          {
+            integrations: {
+              'MailChimp': {
+                <% if try_spree_current_user.accepts_marketing_emails == true %>
+                  'subscriptionStatus': 'subscribed'
+                <% else %>
+                  'subscriptionStatus': 'unsubscribed'
+                <% end %>
+              }
+            }
+          });
+    }
+  </script>
+<% end %>

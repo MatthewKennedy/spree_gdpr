@@ -1,0 +1,62 @@
+<div data-hook="user_gdpr_consent_status" class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= Spree.t(:user_consent_check_list) %>
+    </h1>
+  </div>
+  <table class="table" id="gdpr-stats" data-hook="data-hook">
+    <tr>
+      <td width="70%"><%= Spree.t(:allows_user_preference_cookies) %>:</td>
+      <td>
+        <% if @user.allows_user_preference_cookies == true %>
+          <span class="icon icon-save"></span>
+        <% else %>
+          <span class="icon icon-delete"></span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td width="70%"><%= Spree.t(:allows_marketing_cookies) %>:</td>
+      <td>
+        <% if @user.allows_marketing_cookies == true %>
+          <span class="icon icon-save"></span>
+        <% else %>
+          <span class="icon icon-delete"></span>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="70%"><%= Spree.t(:allows_analytics_cookies) %>:</td>
+      <td>
+        <% if @user.allows_analytics_cookies == true %>
+          <span class="icon icon-save"></span>
+        <% else %>
+          <span class="icon icon-delete"></span>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="70%"><%= Spree.t(:accepts_marketing_emails) %>:</td>
+      <td>
+        <% if @user.accepts_marketing_emails == true %>
+          <span class="icon icon-save"></span>
+        <% else %>
+          <span class="icon icon-delete"></span>
+        <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="70%"><%= Spree.t(:accepts_store_terms_and_conditions) %>:</td>
+      <td>
+        <% if @user.accepts_terms_and_conditions == true %>
+          <span class="icon icon-save"></span>
+        <% else %>
+          <span class="icon icon-delete"></span>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -2,8 +2,15 @@
   &nbsp; &nbsp;
 
  <%# ToDo Add a working checkbox to checkout/address form that updates database => accepts_marketing_emails on submission of the address form button. %>
-  <%= fields_for try_spree_current_user, url: update_gdpr_path, method: :put, remote: true do |f| %>
+  <%= fields_for try_spree_current_user, url: update_marketing_preferences_path, method: :put, remote: true do |f| %>
     <%= f.check_box :accepts_marketing_emails %>
     <%= f.label :accepts_marketing_emails, Spree.t(:accepts_marketing_emails) %>
   <% end %>
 </span>
+
+
+<% if try_spree_current_user.accepts_marketing_emails %>
+    yes
+<% else %>
+    no
+<% end %>
