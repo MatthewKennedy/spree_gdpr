@@ -3,6 +3,7 @@ module Spree
     before_action :update_marketing_preferences, only: :update
 
     def update_marketing_preferences
+      return unless params[:state] == 'address'
       @user ||= try_spree_current_user
       @user.update_attributes(user_gdpr_params) if @user
     end
