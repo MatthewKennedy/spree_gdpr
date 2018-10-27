@@ -1,31 +1,14 @@
 
-<% if try_spree_current_user.accepts_marketing_emails %>
-      analytics.identify( {
-          email: "<%= @user.email %>",
-          },
-          { integrations: {
- // ToDo Replace "MailChimp" with <%= segment_email_destination %> string can be set in Spree admin
-            "MailChimp": {
-              "subscriptionStatus": "subscribed"
-            }
-          }
-      });
+<% if try_spree_current_user.accepts_marketing_emails == true %>
+    // console.log("user allows marketing emails")
+    // Add logic here
 <% else %>
-      analytics.identify( {
-          email: "<%= @user.email %>",
-          },
-          { integrations: {
- // ToDo Replace "MailChimp" with <%= segment_email_destination %> string can be set in Spree admin
-            "MailChimp": {
-              "subscriptionStatus": "unsubscribed"
-            }
-          }
-      });
+    // console.log("user does not allow marketing emails")
 <% end %>
 
 <% if try_spree_current_user.allows_user_preference_cookies %>
-    console.log("user allows cookies")
+    // console.log("user allows Preference cookies")
     // Add logic here
 <% else %>
-    console.log("user doesn't allows cookies")
+    // console.log("user does not allow Preference cookies")
 <% end %>

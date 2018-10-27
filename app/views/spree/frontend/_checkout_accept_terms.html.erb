@@ -1,8 +1,12 @@
-<div  style="float:right;">
-<span data-hook="save_user_address" class='save-user-address-wrapper'>
-  &nbsp; &nbsp;
-  <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-  <%= label_tag :save_user_address, Spree.t(:accept_terms_and_conditions) %>
-</span>
-  <p><%= label_tag :save_user_address, Spree.t(:clich_here_to_read) %></p>
-</div>
+<% if try_spree_current_user.accepts_terms_and_conditions == false %>
+  <div  style="float:right;">
+    <span data-hook="accepts_terms_and_conditions" class='save-user-address-wrapper'>
+      &nbsp; &nbsp;
+      <%= fields_for try_spree_current_user, url: update_terms_preferences_path, method: :put, remote: true do |f| %>
+        <%= f.check_box :accepts_terms_and_conditions %>
+        <%= f.label :accepts_terms_and_conditions, Spree.t(:accepts_terms_and_conditions) %>
+      <% end %>
+    </span>
+    <p><%= label_tag :save_user_address, Spree.t(:clich_here_to_read) %></p>
+  </div>
+<% end %>
