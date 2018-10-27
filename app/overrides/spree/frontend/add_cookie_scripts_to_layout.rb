@@ -3,5 +3,5 @@ Deface::Override.new(
     :name => "add_cookie_concent_script",
     :insert_bottom=> "[data-hook='body']",
     :partial => "spree/frontend/cookie_scripts",
-    :disabled => false
+    :disabled => true
   )

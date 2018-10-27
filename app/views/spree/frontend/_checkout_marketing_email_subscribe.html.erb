@@ -1,9 +1,7 @@
-<% if try_spree_current_user.accepts_marketing_emails == false %>
-  <span data-hook="accepts_marketing_emails" class='save-user-address-wrapper'>
+<span data-hook="accepts_marketing_emails" class='save-user-address-wrapper<% if try_spree_current_user.accepts_marketing_emails == true %> hide <% end %>' >
     &nbsp; &nbsp;
     <%= fields_for try_spree_current_user, url: update_marketing_preferences_path, method: :put, remote: true do |f| %>
       <%= f.check_box :accepts_marketing_emails %>
       <%= f.label :accepts_marketing_emails, Spree.t(:accepts_marketing_emails) %>
     <% end %>
-  </span>
-<% end %>
+</span>

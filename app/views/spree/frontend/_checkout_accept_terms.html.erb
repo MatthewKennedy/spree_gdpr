@@ -1,5 +1,4 @@
-<% if try_spree_current_user.accepts_terms_and_conditions == false %>
-  <div  style="float:right;">
+  <div class="<% if try_spree_current_user.accepts_terms_and_conditions == true %>hide<% end %>" style="float:right;">
     <span data-hook="accepts_terms_and_conditions" class='save-user-address-wrapper'>
       &nbsp; &nbsp;
       <%= fields_for try_spree_current_user, url: update_terms_preferences_path, method: :put, remote: true do |f| %>
@@ -9,4 +8,16 @@
     </span>
     <p><%= label_tag :save_user_address, Spree.t(:clich_here_to_read) %></p>
   </div>
+
+<% if try_spree_current_user.accepts_terms_and_conditions == false %>
+  <script>
+      $(function() {
+        var chk = $(':checkbox');
+        var btn = $('input[type="submit"]');
+
+        chk.on('change', function() {
+          btn.prop("disabled", !this.checked);
+        }).trigger('change');
+      });
+  </script>
 <% end %>
