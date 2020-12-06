@@ -1,5 +1,5 @@
 module Spree
-  UsersController.class_eval do
+  module UsersControllerDecorator
     def update_gdpr
       @user ||= spree_current_user
       if @user.update_attributes(user_gdpr_params)
@@ -19,3 +19,5 @@ module Spree
     end
   end
 end
+
+::Spree::UsersController.prepend ::Spree::UsersControllerDecorator if ::Spree::UsersController.included_modules.exclude?(::Spree::UsersControllerDecorator)

@@ -1,5 +1,5 @@
 # spree_gdpr
-This extension is designed for use with Spree version 3.5 or higher.
+**This extension is a work in progress**, feel free to contribute and open PR's
 
 spree_gdpr extends the spree_analytics_tracker extention by adding email subscription support via Segment.com, allowing (track.identify) functionality while remaining GDPR compliant.
 
@@ -11,7 +11,9 @@ Using the spree_gdpr extention you can plug-in services like:
 
 1. Add the following extensions to your Gemfile with this line:
   ``` ruby
-  gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
+  gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers' # < Spree 4.1
+  gem 'spree_analytics_trackers', '~> 2.0' # Spree 4.1 and up
+
   gem 'spree_gdpr', github: 'matthewkennedy/spree_gdpr'
 
   ```
